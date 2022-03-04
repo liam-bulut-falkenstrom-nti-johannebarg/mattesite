@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* calc sida*/
+
+body {
+    background: url(https://images-ext-1.discordapp.net/external/xwiB1EOlWVPmGnJr5HKdFqDQRCJgCvkB5kLG-xOhMeg/https/i.gyazo.com/thumb/1200/cefdb6344a45797d9d690d0e5e155b6b-png.jpg) fixed;
+}
+
+#header_calc {
+    height: 80px;
+    background-color: red;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "p1 p2 p3";
+}
+
+#header_calc #p1 {
+    grid-area: p1;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+#header_calc #p2 {
+    grid-area: p2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+}
+
+#header_calc #p3 {
+    grid-area: p3;
+    display: flex;
+    justify-content: right;
+    margin-right: 80px;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+#main_calc {
+    height: 500px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.main_grid_calc {
+    display: grid;
+    margin: 20px;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 2fr;
+    grid-template-areas: "ard1 ard2 ard3 ard4 ard5 ard6";
+}
+
+.num1 {
+    grid-area: ard1;
+    background-color: antiquewhite;
+    border: 5px solid black;
+    border-right: 0px;
+}
+
+.operator {
+    grid-area: ard2;
+    background-color: aquamarine;
+    border: 5px solid black;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.num2 {
+    grid-area: ard3;
+    background-color: lightgoldenrodyellow;
+    border: 5px solid black;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.eql {
+    grid-area: ard4;
+    background-color: lightcoral;
+    border: 5px solid black;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.input {
+    grid-area: ard5;
+    background-color: pink;
+    border: 5px solid black;
+    border-left: 0px;
+}
+
+.check {
+    grid-area: ard6;
+    background-color: beige;
+}
+
+
+#footer_calc {
+    height: 80px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+
