@@ -121,20 +121,36 @@
 .check div {
     width: 25px;
     height: 3px;
-    background-color: red;
+    background-color: black;
     margin: 5px;
     border-radius: 10%;
     transition: all 0.3s;
+    opacity: 0;
 }
 
-.toggle .line1 {
+.correctmark .line1 {
+    opacity: 1;
+    background: green;
     transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.toggle .line2{
-    opacity: ;
+.correctmark .line2 {
+    opacity: 1;
+    background: green;
+    transform: rotate(45deg) translate(-5px,-6px);
 }
 
+.falsemark .line1 {
+    opacity: 1;
+    background: red;
+    transform: rotate(-45deg) translate(5px,-6px)
+}
+
+.falsemark .line2 {
+    opacity: 1;
+    background: red;
+    transform: rotate(-45deg) translate(5px,6px)
+}
 
 #footer_calc {
     height: 80px;
