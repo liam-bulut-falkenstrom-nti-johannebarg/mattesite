@@ -10,6 +10,7 @@ var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
 var input_array = document.getElementsByClassName('input').element.querySelector(input)
+var time_tracker = 0
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -61,3 +62,4 @@ function toggleCheckmark() {
 
 console.log(answers(num1_array, num2_array, user_input))
 console.log(input_array)
+

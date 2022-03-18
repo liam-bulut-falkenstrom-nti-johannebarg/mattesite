@@ -4,11 +4,16 @@
     box-sizing: border-box;
 }
 
+body {
+    background: url(/img/img_calc.jpg) no-repeat fixed;
+}
+
 /* calc sida*/
 
 #header_calc {
     height: 80px;
-    background-color: red;
+    background: linear-gradient(90deg, rgb(0, 213, 255) 0%, rgb(52, 52, 167) 65%, rgb(10, 5, 99) 100%);
+    color: white;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -156,7 +161,8 @@
 
 #footer_calc {
     height: 80px;
-    background-color: red;
+    background: linear-gradient(90deg, rgb(0, 213, 255) 0%, rgb(52, 52, 167) 65%, rgb(10, 5, 99) 100%);
+    color: white;
     display: flex;
     justify-content: center;
     align-items:center;
