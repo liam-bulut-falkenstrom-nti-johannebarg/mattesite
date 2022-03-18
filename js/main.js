@@ -9,7 +9,7 @@ var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
-var input_array = document.getElementsByClassName('input').element.querySelector(input)
+var input_array = document.getElementsByClassName('input')
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -57,7 +57,6 @@ function toggleCheckmark() {
     else
         document.querySelector('check').classList.toggle('falsemark')
 }
-
 
 console.log(answers(num1_array, num2_array, user_input))
 console.log(input_array)
