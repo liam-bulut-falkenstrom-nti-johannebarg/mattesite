@@ -11,9 +11,9 @@ body {
 /* calc sida*/
 
 #header_calc {
-    height: 80px;
     background: linear-gradient(90deg, rgb(0, 213, 255) 0%, rgb(52, 52, 167) 65%, rgb(10, 5, 99) 100%);
     color: white;
+    height: 10vh;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -45,7 +45,7 @@ body {
 }
 
 #main_calc {
-    height: 500px;
+    height: 80vh;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -61,7 +61,7 @@ body {
     display: grid;
     margin: 20px;
     height: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 80px;
     grid-template-areas: "ard1 ard2 ard3 ard4 ard5 ard6";
 }
 
@@ -126,8 +126,8 @@ body {
 }
 
 .check div {
-    width: 25px;
-    height: 3px;
+    width: 35px;
+    height: 5px;
     background-color: black;
     margin: 5px;
     border-radius: 10%;
@@ -138,31 +138,32 @@ body {
 .correctmark .line1 {
     opacity: 1;
     background: green;
-    transform: rotate(-45deg) translate(-5px, 6px);
+    width: 15px;
+    transform: rotate(45deg) translate(13px, -10px);
 }
 
 .correctmark .line2 {
     opacity: 1;
     background: green;
-    transform: rotate(45deg) translate(-5px,-6px);
+    transform: rotate(-45deg) translate(0px,-3px);
 }
 
 .falsemark .line1 {
     opacity: 1;
     background: red;
-    transform: rotate(-45deg) translate(5px,-6px)
+    transform: rotate(45deg) translate(17px,-15px)
 }
 
 .falsemark .line2 {
     opacity: 1;
     background: red;
-    transform: rotate(-45deg) translate(5px,6px)
+    transform: rotate(-45deg) translate(-17px,-15px)
 }
 
 #footer_calc {
-    height: 80px;
     background: linear-gradient(90deg, rgb(0, 213, 255) 0%, rgb(52, 52, 167) 65%, rgb(10, 5, 99) 100%);
     color: white;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -231,6 +232,10 @@ body {
     padding: 0px;
     background-color: pink;
     font-size: 25px;
-    width: 150px;
+    width: 100%;
     text-align: center;
+}
+
+#button_box {
+    background-color: aquamarine;
 }

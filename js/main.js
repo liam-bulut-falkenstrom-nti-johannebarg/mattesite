@@ -11,9 +11,52 @@ var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
 var input_array = document.getElementsByClassName('input').element.querySelector(input)
 var time_tracker = 0
+let input_box_array = document.getElementsByClassName('textbox')
+let button = document.getElementById('button_box')
+let value = []
+let selector = document.getElementsByClassName('type_button')
+let sub_select = document.getElementsByClassName('sub_button')
+let div_select = document.getElementsByClassName('div_button')
+let mul_select = document.getElementsByClassName('mul_button')
+let add_select = document.getElementsByClassName('add_button')
 
 
 // document.getElementsByClassName('operator').innerText = '+';
+
+
+selector.addEventListener('click', () => {
+    let operator = ""
+    if( selector = sub_select){
+      operator = "-";
+    }
+    if( selector = add_select){
+        operator = "+";
+    }
+    if( selector = mul_select){
+        operator = "*";
+    }
+    if( selector = div_select){
+        operator = "/";
+    }
+})
+
+button.addEventListener(`click`, () => { 
+
+    let value = []
+
+    for (var i = 0; i < input_box_array.length; i++) {
+        value[i] = input_box_array[i].value
+    }
+
+    console.log(value)
+
+    return value
+
+})
+
+function getinput() {
+    return input_array = document.getElementsByClassName('textbox')
+}
 
 function randomnum(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
@@ -57,9 +100,13 @@ function toggleCheckmark() {
         document.querySelector('.check').classList.toggle('correctmark')
     else
         document.querySelector('check').classList.toggle('falsemark')
+    end
 }
+
+
 
 
 console.log(answers(num1_array, num2_array, user_input))
 console.log(input_array)
 
+console.log(operator)
