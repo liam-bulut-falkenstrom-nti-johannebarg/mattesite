@@ -7,7 +7,7 @@
 /* calc sida*/
 
 #header_calc {
-    height: 80px;
+    height: 10vh;
     background-color: red;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -40,7 +40,7 @@
 }
 
 #main_calc {
-    height: 500px;
+    height: 80vh;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -139,7 +139,7 @@
 
 
 #footer_calc {
-    height: 80px;
+    height: 10vh;
     background-color: red;
     display: flex;
     justify-content: center;
@@ -209,6 +209,6 @@
     padding: 0px;
     background-color: pink;
     font-size: 25px;
-    width: 150px;
+    width: 100%;
     text-align: center;
 }
