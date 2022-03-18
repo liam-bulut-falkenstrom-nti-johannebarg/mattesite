@@ -9,10 +9,30 @@ var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
-var input_array = document.getElementsByClassName('input')
+let input_box_array = document.getElementsByClassName('textbox')
+let button = document.getElementById('button_box')
+let value = []
 
 
 // document.getElementsByClassName('operator').innerText = '+';
+
+button.addEventListener(`click`, () => { 
+
+    let value = []
+
+    for (var i = 0; i < input_box_array.length; i++) {
+        value[i] = input_box_array[i].value
+    }
+
+    console.log(value)
+
+    return value
+
+})
+
+function getinput() {
+    return input_array = document.getElementsByClassName('textbox')
+}
 
 function randomnum(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
@@ -58,5 +78,7 @@ function toggleCheckmark() {
         document.querySelector('check').classList.toggle('falsemark')
 }
 
+
+
+
 console.log(answers(num1_array, num2_array, user_input))
-console.log(input_array)

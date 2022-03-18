@@ -229,3 +229,7 @@
     width: 150px;
     text-align: center;
 }
+
+#button_box {
+    background-color: aquamarine;
+}
