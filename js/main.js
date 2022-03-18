@@ -9,14 +9,41 @@ var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
+var input_array = document.getElementsByClassName('input').element.querySelector(input)
+var time_tracker = 0
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
+let value = []
+let selector = document.getElementsByClassName('type_button')
+let sub_select = document.getElementsByClassName('sub_button')
+let div_select = document.getElementsByClassName('div_button')
+let mul_select = document.getElementsByClassName('mul_button')
+let add_select = document.getElementsByClassName('add_button')
 
 
+
+
+selector.addEventListener('click', () => {
+    let operator = ""
+    if( selector = sub_select){
+      operator = "-";
+    }
+    if( selector = add_select){
+        operator = "+";
+    }
+    if( selector = mul_select){
+        operator = "*";
+    }
+    if( selector = div_select){
+        operator = "/";
+    }
+})
+
+button.addEventListener(`click`, () => { 
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -122,3 +149,7 @@ button.addEventListener(`click`, (num1_array, num2_array, user_input) => {
 })
 
 console.log(answers(num1_array, num2_array, user_input))
+console.log(answers(num1_array, num2_array, user_input))
+console.log(input_array)
+
+console.log(operator)
