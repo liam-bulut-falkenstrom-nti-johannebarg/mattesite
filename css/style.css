@@ -6,10 +6,6 @@
 
 /* calc sida*/
 
-body {
-    background: url(https://images-ext-1.discordapp.net/external/xwiB1EOlWVPmGnJr5HKdFqDQRCJgCvkB5kLG-xOhMeg/https/i.gyazo.com/thumb/1200/cefdb6344a45797d9d690d0e5e155b6b-png.jpg) fixed;
-}
-
 #header_calc {
     height: 80px;
     background-color: red;
@@ -51,7 +47,9 @@ body {
     background-color: lightblue;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    font-size: 30px;
+    font-family: sans-serif;
 }
 
 .main_grid_calc {
@@ -67,6 +65,9 @@ body {
     background-color: antiquewhite;
     border: 5px solid black;
     border-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .operator {
@@ -75,6 +76,9 @@ body {
     border: 5px solid black;
     border-right: 0px;
     border-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .num2 {
@@ -83,6 +87,9 @@ body {
     border: 5px solid black;
     border-right: 0px;
     border-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .eql {
@@ -91,6 +98,9 @@ body {
     border: 5px solid black;
     border-right: 0px;
     border-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .input {
@@ -104,6 +114,26 @@ body {
 .check {
     grid-area: ard6;
     background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check div {
+    width: 25px;
+    height: 3px;
+    background-color: red;
+    margin: 5px;
+    border-radius: 10%;
+    transition: all 0.3s;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: ;
 }
 
 
