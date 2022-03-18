@@ -56,7 +56,7 @@
     display: grid;
     margin: 20px;
     height: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr 80px;
     grid-template-areas: "ard1 ard2 ard3 ard4 ard5 ard6";
 }
 
@@ -121,22 +121,39 @@
 }
 
 .check div {
-    width: 25px;
-    height: 3px;
-    background-color: red;
+    width: 35px;
+    height: 5px;
+    background-color: black;
     margin: 5px;
     border-radius: 10%;
     transition: all 0.3s;
+    opacity: 0;
 }
 
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.toggle .line2{
+.correctmark .line1 {
     opacity: 1;
+    background: green;
+    width: 15px;
+    transform: rotate(45deg) translate(13px, -10px);
 }
 
+.correctmark .line2 {
+    opacity: 1;
+    background: green;
+    transform: rotate(-45deg) translate(0px,-3px);
+}
+
+.falsemark .line1 {
+    opacity: 1;
+    background: red;
+    transform: rotate(45deg) translate(17px,-15px)
+}
+
+.falsemark .line2 {
+    opacity: 1;
+    background: red;
+    transform: rotate(-45deg) translate(-17px,-15px)
+}
 
 #footer_calc {
     height: 10vh;
@@ -211,4 +228,8 @@
     font-size: 25px;
     width: 100%;
     text-align: center;
+}
+
+#button_box {
+    background-color: aquamarine;
 }
