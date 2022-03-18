@@ -132,9 +132,8 @@
 }
 
 .toggle .line2{
-    opacity: ;
+    opacity: hidden;
 }
-
 
 #footer_calc {
     height: 80px;

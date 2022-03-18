@@ -9,7 +9,7 @@ var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
-var input_array = document.getElementsByClassName('input')
+var input_array = document.getElementsByClassName('input').element.querySelector(input)
 
 
 // document.getElementsByClassName('operator').innerText = '+';
