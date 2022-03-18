@@ -71,6 +71,12 @@ function answers(num1_array, num2_array, user_input) {
     return answer_array
 }
 
+function toggleCheckmark() {
+    if function() == true
+        document.querySelector('.check').classList.toggle('correctmark')
+    else
+        document.querySelector('check').classList.toggle('falsemark')
+}
 
 
 
