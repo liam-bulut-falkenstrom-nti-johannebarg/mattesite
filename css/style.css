@@ -151,13 +151,13 @@ body {
 .falsemark .line1 {
     opacity: 1;
     background: red;
-    transform: rotate(45deg) translate(17px,-15px)
+    transform: rotate(45deg) translate(14px,-15px)
 }
 
 .falsemark .line2 {
     opacity: 1;
     background: red;
-    transform: rotate(-45deg) translate(-17px,-15px)
+    transform: rotate(-45deg) translate(-14px,-15px)
 }
 
 #footer_calc {
