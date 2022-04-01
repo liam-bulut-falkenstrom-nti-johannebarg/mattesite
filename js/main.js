@@ -9,15 +9,14 @@ var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
-var input_array = document.getElementsByClassName('input').element.querySelector(input)
-var time_tracker = 0
+var input_array = document.getElementsByClassName('input')
+var time_tracker = 0;
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
-let value = []
 let selector = document.getElementsByClassName('type_button')
 let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
@@ -25,25 +24,39 @@ let mul_select = document.getElementsByClassName('mul_button')
 let add_select = document.getElementsByClassName('add_button')
 
 
-
-
-selector.addEventListener('click', () => {
-    let operator = ""
-    if( selector = sub_select){
-      operator = "-";
-    }
-    if( selector = add_select){
-        operator = "+";
-    }
-    if( selector = mul_select){
-        operator = "*";
-    }
-    if( selector = div_select){
-        operator = "/";
-    }
-})
+// selector.addEventListener('click', () => {
+//     let operator = ""
+//     if (selector == sub_select){
+//       operator = "-";
+//     }
+//     if (selector == add_select){
+//         operator = "+";
+//     }
+//     if (selector == mul_select){
+//         operator = "*";
+//     }
+//     if (selector == div_select){
+//         operator = "/";
+//     }
+// })
 
 button.addEventListener(`click`, () => { 
+
+    let value = []
+
+    for (var i = 0; i < input_box_array.length; i++) {
+        value[i] == input_box_array[i].value
+    }
+
+    console.log(value)
+
+    return value
+
+})
+
+function getinput() {
+    return input_array = document.getElementsByClassName('textbox')
+}
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -76,15 +89,15 @@ for (var i = 0; i < equal_array.length; i++) {
 }
 
 var math = {
-    '+': function (x, y) { x + y },
+    '+': function (x, y) { return x + y },
     '-': function (x, y) { return x - y },
     '*': function (x, y) { return x * y },
     '/': function (x, y) { return x / y }
 }
 
-function answers(num1_array, num2_array, user_input) {
-    for (var i = 0; i < num1_array.length; i++) {
-      answer_array[i] =  math[user_input](num1_array[i], num2_array[i])
+function answers(num1_array_in, num2_array_in, user_input) {
+    for (var i = 0; i < num1_array_in.length; i++) {
+      answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
     }
     return answer_array
 }
@@ -127,10 +140,7 @@ function draw(result_array) {
     }
 }
 
-console.log(num1_array)
-console.log(num2_array)
-
-button.addEventListener(`click`, (num1_array, num2_array, user_input) => { 
+button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
 
     let value_array = []
 
@@ -148,8 +158,6 @@ button.addEventListener(`click`, (num1_array, num2_array, user_input) => {
 
 })
 
-console.log(answers(num1_array, num2_array, user_input))
-console.log(answers(num1_array, num2_array, user_input))
+console.log(answers(num1_array_in, num2_array_in, user_input))
+console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
-
-console.log(operator)
