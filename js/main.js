@@ -162,4 +162,3 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
-console.log(operator)
