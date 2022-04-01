@@ -239,3 +239,7 @@ body {
 #button_box {
     background-color: aquamarine;
 }
+
+#button_box:hover {
+    cursor:pointer;
+}

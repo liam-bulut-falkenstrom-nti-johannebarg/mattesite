@@ -10,7 +10,7 @@ var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
 var input_array = document.getElementsByClassName('input')
-var time_tracker = 0;
+var time_tracker = 0
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
@@ -140,6 +140,7 @@ function draw(result_array) {
     }
 }
 
+
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
 
     let value_array = []
@@ -161,3 +162,4 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
+console.log(operator)
