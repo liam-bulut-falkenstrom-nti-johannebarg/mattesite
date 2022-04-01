@@ -26,19 +26,37 @@ let add_select = document.getElementsByClassName('add_button')
 
 // selector.addEventListener('click', () => {
 //     let operator = ""
-//     if ( selector == sub_select){
+//     if (selector == sub_select){
 //       operator = "-";
 //     }
-//     if ( selector == add_select){
+//     if (selector == add_select){
 //         operator = "+";
 //     }
-//     if ( selector == mul_select){
+//     if (selector == mul_select){
 //         operator = "*";
 //     }
-//     if ( selector == div_select){
+//     if (selector == div_select){
 //         operator = "/";
 //     }
 // })
+
+button.addEventListener(`click`, () => { 
+
+    let value = []
+
+    for (var i = 0; i < input_box_array.length; i++) {
+        value[i] == input_box_array[i].value
+    }
+
+    console.log(value)
+
+    return value
+
+})
+
+function getinput() {
+    return input_array = document.getElementsByClassName('textbox')
+}
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -79,7 +97,7 @@ var math = {
 
 function answers(num1_array_in, num2_array_in, user_input) {
     for (var i = 0; i < num1_array_in.length; i++) {
-      answer_array[i] =  math[user_input](num1_array_in[i], num2_array_in[i])
+      answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
     }
     return answer_array
 }
