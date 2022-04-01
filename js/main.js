@@ -14,6 +14,7 @@ var time_tracker = 0
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
+let has_answered = false;
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
@@ -22,6 +23,7 @@ let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
 let mul_select = document.getElementsByClassName('mul_button')
 let add_select = document.getElementsByClassName('add_button')
+
 
 
 // selector.addEventListener('click', () => {
@@ -54,12 +56,6 @@ button.addEventListener(`click`, () => {
 
 })
 
-function getinput() {
-    return input_array = document.getElementsByClassName('textbox')
-}
-
-
-// document.getElementsByClassName('operator').innerText = '+';
 
 
 function getinput() {
@@ -142,21 +138,22 @@ function draw(result_array) {
 
 
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
+    if (has_answered != true){
+        let value_array = []
 
-    let value_array = []
+        for (var i = 0; i < input_box_array.length; i++) {
+            value_array[i] = input_box_array[i].value
+        }
 
-    for (var i = 0; i < input_box_array.length; i++) {
-        value_array[i] = input_box_array[i].value
+        console.log(value_array)
+
+        console.log(num1_array_in)
+        console.log(num2_array_in)
+        console.log(user_input) 
+
+        check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
+        has_answered = true
     }
-
-    console.log(value_array)
-
-    console.log(num1_array_in)
-    console.log(num2_array_in)
-    console.log(user_input) 
-
-    check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
-
 })
 
 console.log(answers(num1_array_in, num2_array_in, user_input))
