@@ -17,7 +17,6 @@ let value = [];
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
-let value = []
 let selector = document.getElementsByClassName('type_button')
 let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
