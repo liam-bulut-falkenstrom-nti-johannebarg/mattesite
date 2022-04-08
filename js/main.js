@@ -10,7 +10,8 @@ var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
 var input_array = document.getElementsByClassName('input')
-var time_tracker = 0
+let time_select = document.getElementById('time')
+var time_tracker = 0;
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
@@ -56,6 +57,27 @@ button.addEventListener(`click`, () => {
 
 })
 
+<<<<<<< Updated upstream
+=======
+
+// document.getElementsByClassName('operator').innerText = '+';
+>>>>>>> Stashed changes
+
+var count_down_timer = 10
+
+var time_tracker = setInterval(function() {
+  
+    time_select.innerHTML = "Time: " + count_down_timer 
+    count_down_timer -= 1
+    
+    if (count_down_timer < 0) {
+      clearInterval(time_tracker);
+      time_select.innerHTML = "Slut på tid";
+    }
+
+}, 1000);
+
+console.log(time_select)
 
 
 function getinput() {
