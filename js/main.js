@@ -7,7 +7,6 @@
 var max = 14;
 var min = 3;
 var user_input = localStorage.getItem("user_input");
-console.log(user_input)
 var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
@@ -31,7 +30,6 @@ let div_select = document.getElementsByClassName('div_button')
 let mul_select = document.getElementsByClassName('mul_button')
 let add_select = document.getElementsByClassName('add_button')
 
-console.log(selector1)
 try {
     selector1[0].addEventListener('click', () => {
         user_input = "+";
@@ -52,7 +50,7 @@ try {
     })
 }
 catch (error) {
-    console.log(error)
+
 }
 try {
     button.addEventListener('click', () => { 
@@ -75,9 +73,6 @@ catch (error) {
 function getinput() {
     return input_array = document.getElementsByClassName('textbox')
 }
-
-
-// document.getElementsByClassName('operator').innerText = '+';
 
 var count_down_timer = 10
 
@@ -121,17 +116,31 @@ function getinput() {
 function randomnum(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
-
-for (var i = 0; i < num1_array.length; i++) {
+if (user_input != "/") {
+    for (var i = 0; i < num1_array.length; i++) {
     num1_array_in[i] = randomnum(min, max)
     num1_array[i].innerHTML = num1_array_in[i]
-}
+    }
 
-for (var i = 0; i < num2_array.length; i++) {
+    for (var i = 0; i < num2_array.length; i++) {
     num2_array_in[i] = randomnum(min, max)
     num2_array[i].innerHTML = num2_array_in[i]
+    }
 }
+if (user_input == "/") {
+    for (var i = 0; i < num1_array.length; i++) {
+    num1_array_in[i] = randomnum(min, max)
+    num1_array[i].innerHTML = num1_array_in[i]
+    }
 
+    for (var i = 0; i < num2_array.length; i++) {
+        generated_number = randomnum(min, max)
+        num2_array_in[i] = generated_number
+        num1_array_in[i] = randomnum(min, max) * generated_number
+        num2_array[i].innerHTML = num2_array_in[i]
+        num1_array[i].innerHTML = num1_array_in[i]
+    }
+}
 for (var i = 0; i < operator_array.length; i++) {
     operator_array[i].innerHTML = user_input
 }
