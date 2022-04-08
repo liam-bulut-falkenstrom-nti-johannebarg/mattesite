@@ -1,10 +1,13 @@
+
+
 // var (glob), let(bättre), CONST - > variabels
 //for-loop och for (each)
 
 //document.querySelector('h1').innerText = hej;
 var max = 14;
 var min = 3;
-var user_input = '+';
+var user_input = localStorage.getItem("user_input");
+console.log(user_input)
 var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
@@ -19,31 +22,40 @@ let has_answered = false;
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
-let selector = document.getElementsByClassName('type_button')
+let selector1 = document.getElementsByClassName('type_button1')
+let selector2 = document.getElementsByClassName('type_button2')
+let selector3 = document.getElementsByClassName('type_button3')
+let selector4 = document.getElementsByClassName('type_button4')
 let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
 let mul_select = document.getElementsByClassName('mul_button')
 let add_select = document.getElementsByClassName('add_button')
 
-
-
-// selector.addEventListener('click', () => {
-//     let operator = ""
-//     if (selector == sub_select){
-//       operator = "-";
-//     }
-//     if (selector == add_select){
-//         operator = "+";
-//     }
-//     if (selector == mul_select){
-//         operator = "*";
-//     }
-//     if (selector == div_select){
-//         operator = "/";
-//     }
-// })
-
-button.addEventListener(`click`, () => { 
+console.log(selector1)
+try {
+    selector1[0].addEventListener('click', () => {
+        user_input = "+";
+        localStorage.setItem("user_input", user_input);
+    })
+    console.log(selector2)
+    selector2[0].addEventListener('click', () => {    
+        user_input = "-";
+        localStorage.setItem("user_input", user_input);
+    })
+    selector3[0].addEventListener('click', () => {
+        user_input = "*";
+        localStorage.setItem("user_input", user_input);
+    })
+    selector4[0].addEventListener('click', () => {
+        user_input = "/";
+        localStorage.setItem("user_input", user_input);
+    })
+}
+catch (error) {
+    console.log(error)
+}
+try {
+    button.addEventListener('click', () => { 
 
     let value = []
 
@@ -55,7 +67,14 @@ button.addEventListener(`click`, () => {
 
     return value
 
-})
+    })
+}
+catch (error) {
+
+}
+function getinput() {
+    return input_array = document.getElementsByClassName('textbox')
+}
 
 
 // document.getElementsByClassName('operator').innerText = '+';
@@ -63,30 +82,34 @@ button.addEventListener(`click`, () => {
 var count_down_timer = 10
 
 var time_tracker = setInterval(function() {
-  
-    time_select.innerHTML = "Time: " + count_down_timer 
-    count_down_timer -= 1
-    
-    if (count_down_timer < 0) {
-      clearInterval(time_tracker);
-      let value_array = []
+    try {
+        time_select.innerHTML = "Time: " + count_down_timer 
+        count_down_timer -= 1
+        
+        if (count_down_timer < 0) {
+        clearInterval(time_tracker);
+        let value_array = []
 
-        for (var i = 0; i < input_box_array.length; i++) {
-            value_array[i] = input_box_array[i].value
+            for (var i = 0; i < input_box_array.length; i++) {
+                value_array[i] = input_box_array[i].value
+            }
+
+            console.log(value_array)
+
+            console.log(num1_array_in)
+            console.log(num2_array_in)
+            console.log(user_input) 
+
+            check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
+            has_answered = true
+        time_select.innerHTML = "Slut på tid";
         }
-
-        console.log(value_array)
-
-        console.log(num1_array_in)
-        console.log(num2_array_in)
-        console.log(user_input) 
-
-        check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
-        has_answered = true
-      time_select.innerHTML = "Slut på tid";
     }
+    catch (error) {
 
+    }
 }, 1000);
+
 
 
 
@@ -126,7 +149,7 @@ var math = {
 
 function answers(num1_array_in, num2_array_in, user_input) {
     for (var i = 0; i < num1_array_in.length; i++) {
-      answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
+    answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
     }
     return answer_array
 }
@@ -168,7 +191,7 @@ function check_answers(value_array, answer_array) {
 //         document.querySelector('.check').classList.toggle('falsemark')
 //     }
 // }
-
+try {
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
     if (has_answered != true){
         let value_array = []
@@ -185,9 +208,15 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
 
         check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
         has_answered = true
+
     }
 })
+}
+catch (error) {
+
+}
 
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
+console.log(operator)
