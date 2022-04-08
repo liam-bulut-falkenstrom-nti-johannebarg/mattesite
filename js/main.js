@@ -19,6 +19,15 @@ let has_answered = false;
 var answer_array = [];
 var num1_array_in = [];
 var num2_array_in = [];
+var stat_array_add = [];
+var stat_array_sub = [];
+var stat_array_mul = [];
+var stat_array_div = [];
+var game_log_add = [];
+var game_log_sub = [];
+var game_log_mul = [];
+var game_log_div = [];
+var last_result = 0;
 let selector = document.getElementsByClassName('type_button')
 let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
@@ -59,15 +68,15 @@ button.addEventListener(`click`, () => {
 
 
 // document.getElementsByClassName('operator').innerText = '+';
-
+var start_timer = 10
 var count_down_timer = 10
 
 var time_tracker = setInterval(function() {
   
     time_select.innerHTML = "Time: " + count_down_timer 
-    count_down_timer -= 1
     
-    if (count_down_timer < 0) {
+    
+    if (count_down_timer <= 0) {
       clearInterval(time_tracker);
       let value_array = []
 
@@ -76,14 +85,18 @@ var time_tracker = setInterval(function() {
         }
 
         console.log(value_array)
-
+        
         console.log(num1_array_in)
         console.log(num2_array_in)
         console.log(user_input) 
 
         check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
         has_answered = true
+        time_result.innerHTML = start_timer - count_down_timer
       time_select.innerHTML = "Slut på tid";
+    }
+    else {
+        count_down_timer -= 1
     }
 
 }, 1000);
@@ -146,6 +159,7 @@ function check_answers(value_array, answer_array) {
             console.log('rätt svar')
             result_array[i] = 1
             check_array[i].classList.toggle('correctmark')
+            last_result += 1
         }
         else {
             console.log('er her')
@@ -184,9 +198,47 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
         console.log(user_input) 
 
         check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
+        time_result_i = start_timer - count_down_timer
+        time_result.innerHTML = time_result_i
         has_answered = true
+
+
+
     }
 })
+
+function stats_log(mode) {
+    if (mode == "+") {
+        tio_senaste = 0.0
+        tre_senaste = 0.0
+        game_log_add << [time_result_i, last_result]
+        if (game_log_add.length > 10) {
+            game_log_add.shift()
+        }
+        for (var i = 9; i > -1; i--) {
+            antal_fel = 12 - game_log_add[i][0]
+            antal_ratt = game_log_add[i][0]
+            procent_ratt = parseFloat(antal_ratt / antal_fel)
+            if (i == 6) {
+                tre_senaste = tio_senaste
+            }
+            tio_senaste += procent_ratt
+        }
+        antal_fel = 12 - last_result
+        antal_ratt = last_result
+        procent_ratt = parseFloat(antal_ratt / antal_fel)
+        stat_array_add = [antal_ratt, antal_fel, procent_ratt, tre_senaste, tio_senaste]
+    }
+    else if (mode == "-") {
+
+    }
+    else if (mode == "*") {
+        
+    }
+    else if (mode == "/") {
+        
+    }
+}
 
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
