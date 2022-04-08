@@ -57,11 +57,8 @@ button.addEventListener(`click`, () => {
 
 })
 
-<<<<<<< Updated upstream
-=======
 
 // document.getElementsByClassName('operator').innerText = '+';
->>>>>>> Stashed changes
 
 var count_down_timer = 10
 
@@ -72,12 +69,26 @@ var time_tracker = setInterval(function() {
     
     if (count_down_timer < 0) {
       clearInterval(time_tracker);
+      let value_array = []
+
+        for (var i = 0; i < input_box_array.length; i++) {
+            value_array[i] = input_box_array[i].value
+        }
+
+        console.log(value_array)
+
+        console.log(num1_array_in)
+        console.log(num2_array_in)
+        console.log(user_input) 
+
+        check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
+        has_answered = true
       time_select.innerHTML = "Slut på tid";
     }
 
 }, 1000);
 
-console.log(time_select)
+
 
 
 function getinput() {
@@ -149,15 +160,14 @@ function check_answers(value_array, answer_array) {
 
 
 
-function draw(result_array) {
-    if (result_array[0] == 1) {
-        document.querySelector('.check').classList.toggle('correctmark')
-    }
-    else {
-        document.querySelector('.check').classList.toggle('falsemark')
-    }
-}
-
+// function draw(result_array) {
+//     if (result_array[0] == 1) {
+//         document.querySelector('.check').classList.toggle('correctmark')
+//     }
+//     else {
+//         document.querySelector('.check').classList.toggle('falsemark')
+//     }
+// }
 
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
     if (has_answered != true){
