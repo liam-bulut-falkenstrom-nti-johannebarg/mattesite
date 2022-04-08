@@ -10,7 +10,8 @@ var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
 var equal_array = document.getElementsByClassName('eql') 
 var input_array = document.getElementsByClassName('input')
-var time_tracker = 0
+let time_select = document.getElementById('time')
+var time_tracker = 0;
 let input_box_array = document.getElementsByClassName('textbox')
 let button = document.getElementById('button_box')
 let value = [];
@@ -55,6 +56,38 @@ button.addEventListener(`click`, () => {
     return value
 
 })
+
+
+// document.getElementsByClassName('operator').innerText = '+';
+
+var count_down_timer = 10
+
+var time_tracker = setInterval(function() {
+  
+    time_select.innerHTML = "Time: " + count_down_timer 
+    count_down_timer -= 1
+    
+    if (count_down_timer < 0) {
+      clearInterval(time_tracker);
+      let value_array = []
+
+        for (var i = 0; i < input_box_array.length; i++) {
+            value_array[i] = input_box_array[i].value
+        }
+
+        console.log(value_array)
+
+        console.log(num1_array_in)
+        console.log(num2_array_in)
+        console.log(user_input) 
+
+        check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
+        has_answered = true
+      time_select.innerHTML = "Slut på tid";
+    }
+
+}, 1000);
+
 
 
 
@@ -127,15 +160,14 @@ function check_answers(value_array, answer_array) {
 
 
 
-function draw(result_array) {
-    if (result_array[0] == 1) {
-        document.querySelector('.check').classList.toggle('correctmark')
-    }
-    else {
-        document.querySelector('.check').classList.toggle('falsemark')
-    }
-}
-
+// function draw(result_array) {
+//     if (result_array[0] == 1) {
+//         document.querySelector('.check').classList.toggle('correctmark')
+//     }
+//     else {
+//         document.querySelector('.check').classList.toggle('falsemark')
+//     }
+// }
 
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
     if (has_answered != true){
