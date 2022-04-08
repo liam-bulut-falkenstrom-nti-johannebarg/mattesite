@@ -244,13 +244,62 @@ body {
     cursor:pointer;
 }
 
-/* #result_board{
+#result_board{
     position: fixed;
-    bottom: 20%;
+    display: grid;
+    bottom: 15%;
     right: 20%;
-    height: 20%;
-    width: 40%;
-    background-color: aquamarine;
+    height: 70%;
+    width: 60%;
+    background-color: rgb(235, 235, 235);
+    border: solid darkgray 5px;
+    border-radius: 10px;
+    border-style: outset;
     z-index: 20;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "b1 b2 b3"
+    "b1 b2 b4"
+    ;
+}
 
-} */
+#stats {
+    grid-area: b1;
+}
+
+#p_stats {
+    grid-area: b2;
+}
+
+#menu_stats {
+    grid-area: b3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#grade {
+    grid-area: b4;
+}
+
+.result_board_button {
+display: flex;
+justify-content: center;
+align-items: center;
+border: solid black;
+background-color: salmon;
+cursor: pointer;
+border-radius: 15px;
+width: 200px;
+height: 45px;
+text-decoration: none;
+font-size: 30px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: black;
+
+}
+
+.result_board_button:hover {
+    background-color: pink;
+}
