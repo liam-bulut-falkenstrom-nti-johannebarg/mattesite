@@ -1,10 +1,12 @@
+
+
 // var (glob), let(bättre), CONST - > variabels
 //for-loop och for (each)
 
 //document.querySelector('h1').innerText = hej;
 var max = 14;
 var min = 3;
-var user_input = '+';
+var user_input = localStorage.getItem("user_input");
 var num1_array = document.getElementsByClassName('num1')
 var num2_array = document.getElementsByClassName('num2')
 var operator_array = document.getElementsByClassName('operator')
@@ -29,30 +31,39 @@ var game_log_mul = [];
 var game_log_div = [];
 var last_result = 0;
 let selector = document.getElementsByClassName('type_button')
+let selector1 = document.getElementsByClassName('type_button1')
+let selector2 = document.getElementsByClassName('type_button2')
+let selector3 = document.getElementsByClassName('type_button3')
+let selector4 = document.getElementsByClassName('type_button4')
 let sub_select = document.getElementsByClassName('sub_button')
 let div_select = document.getElementsByClassName('div_button')
 let mul_select = document.getElementsByClassName('mul_button')
 let add_select = document.getElementsByClassName('add_button')
 
+try {
+    selector1[0].addEventListener('click', () => {
+        user_input = "+";
+        localStorage.setItem("user_input", user_input);
+    })
+    console.log(selector2)
+    selector2[0].addEventListener('click', () => {    
+        user_input = "-";
+        localStorage.setItem("user_input", user_input);
+    })
+    selector3[0].addEventListener('click', () => {
+        user_input = "*";
+        localStorage.setItem("user_input", user_input);
+    })
+    selector4[0].addEventListener('click', () => {
+        user_input = "/";
+        localStorage.setItem("user_input", user_input);
+    })
+}
+catch (error) {
 
-
-// selector.addEventListener('click', () => {
-//     let operator = ""
-//     if (selector == sub_select){
-//       operator = "-";
-//     }
-//     if (selector == add_select){
-//         operator = "+";
-//     }
-//     if (selector == mul_select){
-//         operator = "*";
-//     }
-//     if (selector == div_select){
-//         operator = "/";
-//     }
-// })
-
-button.addEventListener(`click`, () => { 
+}
+try {
+    button.addEventListener('click', () => { 
 
     let value = []
 
@@ -64,8 +75,11 @@ button.addEventListener(`click`, () => {
 
     return value
 
-})
-
+    })
+}
+catch (error) {
+    
+}
 
 // document.getElementsByClassName('operator').innerText = '+';
 var start_timer = 10
@@ -80,9 +94,24 @@ var time_tracker = setInterval(function() {
       clearInterval(time_tracker);
       let value_array = []
 
-        for (var i = 0; i < input_box_array.length; i++) {
-            value_array[i] = input_box_array[i].value
-        }
+}
+
+var count_down_timer = 10
+});
+
+var time_tracker = setInterval(function() {
+    try {
+        time_select.innerHTML = "Time: " + count_down_timer 
+        count_down_timer -= 1
+        
+        if (count_down_timer < 0) {
+        clearInterval(time_tracker);
+        let value_array = []
+        
+
+            for (var i = 0; i < input_box_array.length; i++) {
+                value_array[i] = input_box_array[i].value
+            }
 
         console.log(value_array)
         
@@ -93,13 +122,21 @@ var time_tracker = setInterval(function() {
         check_answers(value_array, answers(num1_array_in, num2_array_in, user_input))
         has_answered = true
         time_result.innerHTML = start_timer - count_down_timer
-      time_select.innerHTML = "Slut på tid";
-    }
-    else {
-        count_down_timer -= 1
+        time_select.innerHTML = "Slut på tid";
+        }
+    
+        else {
+            count_down_timer -= 1
+        }
+    
+    
     }
 
+    catch (error) {
+
+    }
 }, 1000);
+
 
 
 
@@ -111,15 +148,31 @@ function getinput() {
 function randomnum(min, max){
     return Math.floor(Math.random() * (max - min) ) + min;
 }
-
-for (var i = 0; i < num1_array.length; i++) {
+if (user_input != "/") {
+    for (var i = 0; i < num1_array.length; i++) {
     num1_array_in[i] = randomnum(min, max)
     num1_array[i].innerHTML = num1_array_in[i]
-}
+    }
 
-for (var i = 0; i < num2_array.length; i++) {
+    for (var i = 0; i < num2_array.length; i++) {
     num2_array_in[i] = randomnum(min, max)
     num2_array[i].innerHTML = num2_array_in[i]
+    }
+}
+
+if (user_input == "/") {
+    for (var i = 0; i < num1_array.length; i++) {
+    num1_array_in[i] = randomnum(min, max)
+    num1_array[i].innerHTML = num1_array_in[i]
+    }
+
+    for (var i = 0; i < num2_array.length; i++) {
+        generated_number = randomnum(min, max)
+        num2_array_in[i] = generated_number
+        num1_array_in[i] = randomnum(min, max) * generated_number
+        num2_array[i].innerHTML = num2_array_in[i]
+        num1_array[i].innerHTML = num1_array_in[i]
+    }
 }
 
 for (var i = 0; i < operator_array.length; i++) {
@@ -139,7 +192,7 @@ var math = {
 
 function answers(num1_array_in, num2_array_in, user_input) {
     for (var i = 0; i < num1_array_in.length; i++) {
-      answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
+    answer_array[i] = math[user_input](num1_array_in[i], num2_array_in[i])
     }
     return answer_array
 }
@@ -182,7 +235,7 @@ function check_answers(value_array, answer_array) {
 //         document.querySelector('.check').classList.toggle('falsemark')
 //     }
 // }
-
+try {
 button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => { 
     if (has_answered != true){
         let value_array = []
@@ -202,10 +255,12 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
         time_result.innerHTML = time_result_i
         has_answered = true
 
-
-
     }
 })
+}
+catch (error) {
+
+}
 
 function stats_log(mode) {
     if (mode == "+") {
@@ -243,3 +298,5 @@ function stats_log(mode) {
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
+    //Har lagt till detta för att det inte ska bli helt error, vet dock inte hur spagetti koden är skriven, behöver hitta de 
+    //exakta ställerna där de ska vara placerade. Vi använder häller inte getinput funktionen, så vet inte varför den är skriven
