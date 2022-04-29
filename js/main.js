@@ -81,26 +81,13 @@ catch (error) {
     
 }
 
-// document.getElementsByClassName('operator').innerText = '+';
 var start_timer = 10
+
 var count_down_timer = 10
-
-// var time_tracker = setInterval(function() {
-  
-//     time_select.innerHTML = "Time: " + count_down_timer 
-    
-//     if (count_down_timer <= 0) {
-//       clearInterval(time_tracker);
-//       let value_array = []
-
-// }
-
-// var count_down_timer = 10
-// });
 
 var time_tracker = setInterval(function() {
     try {
-        time_select.innerHTML = "Time: " + count_down_timer
+        time_select.innerHTML = "Time: " + count_down_timer 
         
         if (count_down_timer < 0) {
         clearInterval(time_tracker);
@@ -122,16 +109,11 @@ var time_tracker = setInterval(function() {
         time_result.innerHTML = start_timer - count_down_timer
         time_select.innerHTML = "Slut på tid";
         }
-    
         else {
             count_down_timer -= 1
         }
-    
-    
     }
-
     catch (error) {
-
     }
 }, 1000);
 
@@ -155,11 +137,6 @@ if (user_input != "/") {
 }
 
 if (user_input == "/") {
-    for (var i = 0; i < num1_array.length; i++) {
-    num1_array_in[i] = randomnum(min, max)
-    num1_array[i].innerHTML = num1_array_in[i]
-    }
-
     for (var i = 0; i < num2_array.length; i++) {
         generated_number = randomnum(min, max)
         num2_array_in[i] = generated_number
@@ -248,7 +225,6 @@ button.addEventListener(`click`, (num1_array_in, num2_array_in, user_input) => {
         time_result_i = start_timer - count_down_timer
         time_result.innerHTML = time_result_i
         has_answered = true
-
     }
 })
 }
