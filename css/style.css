@@ -290,6 +290,7 @@ body {
     right: 20%;
     height: 70%;
     width: 60%;
+    padding: 20px;
     background-color: rgb(235, 235, 235);
     border: solid darkgray 5px;
     border-radius: 10px;
@@ -301,6 +302,10 @@ body {
     "b1 b2 b3"
     "b1 b2 b4"
     ;
+}
+
+#stats h2, h3, div {
+    margin-top: 20px;
 }
 
 #stats {

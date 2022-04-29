@@ -85,29 +85,27 @@ catch (error) {
 var start_timer = 10
 var count_down_timer = 10
 
-var time_tracker = setInterval(function() {
+// var time_tracker = setInterval(function() {
   
-    time_select.innerHTML = "Time: " + count_down_timer 
+//     time_select.innerHTML = "Time: " + count_down_timer 
     
-    
-    if (count_down_timer <= 0) {
-      clearInterval(time_tracker);
-      let value_array = []
+//     if (count_down_timer <= 0) {
+//       clearInterval(time_tracker);
+//       let value_array = []
 
-}
+// }
 
-var count_down_timer = 10
-});
+// var count_down_timer = 10
+// });
 
 var time_tracker = setInterval(function() {
     try {
-        time_select.innerHTML = "Time: " + count_down_timer 
-        count_down_timer -= 1
+        time_select.innerHTML = "Time: " + count_down_timer
         
         if (count_down_timer < 0) {
         clearInterval(time_tracker);
         let value_array = []
-        
+        count_down_timer -= 1
 
             for (var i = 0; i < input_box_array.length; i++) {
                 value_array[i] = input_box_array[i].value
@@ -136,10 +134,6 @@ var time_tracker = setInterval(function() {
 
     }
 }, 1000);
-
-
-
-
 
 function getinput() {
     return input_array = document.getElementsByClassName('textbox')
@@ -298,5 +292,7 @@ function stats_log(mode) {
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(answers(num1_array_in, num2_array_in, user_input))
 console.log(input_array)
+console.log(time_select.innerHTML)
+
     //Har lagt till detta för att det inte ska bli helt error, vet dock inte hur spagetti koden är skriven, behöver hitta de 
     //exakta ställerna där de ska vara placerade. Vi använder häller inte getinput funktionen, så vet inte varför den är skriven
