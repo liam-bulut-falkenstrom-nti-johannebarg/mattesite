@@ -204,16 +204,6 @@ function check_answers(value_array, answer_array) {
 
 }
 
-
-
-// function draw(result_array) {
-//     if (result_array[0] == 1) {
-//         document.querySelector('.check').classList.toggle('correctmark')
-//     }
-//     else {
-//         document.querySelector('.check').classList.toggle('falsemark')
-//     }
-// }
 try {
 button.addEventListener(`click`, (num1_array_in, num2_array_in) => { 
     if (has_answered != true){
